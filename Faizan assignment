@@ -1,0 +1,76 @@
+#:::::::::::::::::Python Lab::::::::::::::::::::
+#::::::::::::::Topic:List:::::::::::::::::::::::
+
+# ----------- M01 -----------
+a = [1,2,4,2,5,2,6]
+while 2 in a:
+    a.remove(2)
+print("M01:", a)
+
+# ----------- M02 (no methods) -----------
+nums = [9,2,11,7,11,3]
+
+largest = nums[0]
+second = nums[0]
+for x in nums:
+    if x > largest:
+        second = largest
+        largest = x
+    elif x != largest and (second == largest or x > second):
+        second = x
+print("Second largest =", second)
+
+
+# ----------- M03 -----------
+a = [10,20,30,40,50]
+a = a[1:] + [a[0]]
+print("M03:", a)
+
+
+# ----------- M04 -----------
+a = [1,2,3,4,5]
+k = int(input("M04 Enter k: "))
+a = a[:k] + [99] + a[k:]
+print("M04:", a)
+
+
+# ----------- M05 -----------
+a = [5,6,7,8,9,10]
+k = int(input("M05 Enter k: "))
+a = a[:k] + a[k+1:]
+print("M05:", a)
+
+
+# ----------- M06 -----------
+line = input("M06 Enter line: ")
+words = line.split()
+words.sort(key=len)
+print("M06 Longest:", words[-1])
+print("M06 Length:", len(words[-1]))
+
+
+# ----------- M07 -----------
+s = input("M07 Enter sentence: ")
+print("M07:", " | ".join(s.split()))
+
+
+# ----------- M08 -----------
+a = [3,3,2,3,1,2,4,4]
+u = list(dict.fromkeys(a))
+print("M08:", u)
+
+
+# ----------- M09 -----------
+a = [1,1,1,2,2,3,4,4]
+print("M09:")
+for x in set(a):
+    print(x, "->", a.count(x))
+
+
+# ----------- M10 -----------
+a = [8,3,5,2,9,1]
+for i in range(len(a)):
+    for j in range(len(a)-1):
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
+print("M10:", a)
